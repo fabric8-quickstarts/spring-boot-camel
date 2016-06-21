@@ -32,7 +32,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- maven plugin versions -->
-    <fabric8.maven.plugin.version>3.0.15</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.0.16</fabric8.maven.plugin.version>
 
     <!-- configure the versions you want to use here -->
     <camel.version>2.17.1</camel.version>
