@@ -21,7 +21,7 @@ The example can be run locally using the following Maven goal:
     mvn spring-boot:run
 
 
-### Running the example in fabric8
+### Running the example in Kubernetes
 
 It is assumed a running Kubernetes platform is already running. If not you can find details how to [get started](http://fabric8.io/guide/getStarted/index.html).
 
@@ -37,10 +37,10 @@ or for OpenShift
 oc get pods
 ```
 
-Then the following command will package your funktion and run it on Kubernetes:
+Then the following command will package your app and run it on Kubernetes:
 
 ```
-mvn install fabric8:deploy
+mvn fabric8:run
 ```
 
 To list all the running pods:
