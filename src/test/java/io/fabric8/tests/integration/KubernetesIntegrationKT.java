@@ -33,6 +33,5 @@ public class KubernetesIntegrationKT {
     @Test
     public void testAppProvisionsRunningPods() throws Exception {
         assertThat(client).deployments().pods().isPodReadyForPeriod();
-
     }
 }
