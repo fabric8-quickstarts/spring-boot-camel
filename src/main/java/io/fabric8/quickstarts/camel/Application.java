@@ -17,12 +17,14 @@ package io.fabric8.quickstarts.camel;
 
 import org.apache.camel.spring.boot.FatJarRouter;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ImportResource;
 
 /**
  * A spring-boot application that includes a Camel route builder to setup the Camel routes
  */
 @SpringBootApplication
-public class MyCamelRoute extends FatJarRouter {
+@ImportResource({"classpath:spring/camel-context.xml"})
+public class Application extends FatJarRouter {
 
     // must have a main method spring-boot can run
     public static void main(String[] args) {
