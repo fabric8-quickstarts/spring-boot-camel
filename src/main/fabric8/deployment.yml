@@ -5,8 +5,8 @@ spec:
         - 
           resources:
             requests:
-              cpu: "0.5"
+              cpu: "0.1"
               memory: 64Mi
             limits:
-              cpu: "1"
+              cpu: "0.2"
               memory: 100Mi
