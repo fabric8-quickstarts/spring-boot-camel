@@ -2,9 +2,7 @@
 
 This example demonstrates how you can use Apache Camel with Spring Boot.
 
-The quickstart uses Spring Boot to configure a little application that includes a Camel
-route that triggers a message every 5th second, and routes the message to a log.
-
+The quickstart uses Spring Boot to configure a little application that includes a Camel route that triggers a message every 5th second, and routes the message to a log.
 
 ### Building
 
@@ -12,29 +10,17 @@ The example can be built with
 
     mvn clean install
 
-
-### Running the example locally
-
-The example can be run locally using the following Maven goal:
-
-    mvn spring-boot:run
-
-
 ### Running the example in OpenShift
 
-It is assumed a running OpenShift platform is already running.
+It is assumed that:
+- OpenShift platform is already running, if not you can find details how to [Install OpenShift at your site](https://docs.openshift.com/container-platform/3.3/install_config/index.html).
+- Your system is configured for Fabric8 Maven Workflow, if not you can find a [Get Started Guide](https://access.redhat.com/documentation/en/red-hat-jboss-middleware-for-openshift/3/single/red-hat-jboss-fuse-integration-services-20-for-openshift/)
 
-Assuming your current shell is connected to OpenShift so that you can type a command like
+The example can be built and run on OpenShift using a single goal:
 
-```
-oc get pods
-```
+    mvn fabric8:deploy
 
-Then the following command will package your app and run it on Kubernetes:
-
-```
-mvn fabric8:run
-```
+When the example runs in OpenShift, you can use the OpenShift client tool to inspect the status
 
 To list all the running pods:
 
@@ -44,10 +30,12 @@ Then find the name of the pod that runs this quickstart, and output the logs fro
 
     oc logs <name of pod>
 
+You can also use the openshift [web console](https://docs.openshift.com/container-platform/3.3/getting_started/developers_console.html#developers-console-video) to manage the
+running pods, and view logs and much more.
 
 ### Running via an S2I Application Template
 
-Applicaiton templates allow you deploy applications to OpenShift by filling out a form in the OpenShift console that allows you to adjust deployment parameters.  This template uses an S2I source build so that it handle building and deploying the application for you.
+Application templates allow you deploy applications to OpenShift by filling out a form in the OpenShift console that allows you to adjust deployment parameters.  This template uses an S2I source build so that it handle building and deploying the application for you.
 
 First, import the Fuse image streams:
 
@@ -58,7 +46,6 @@ Then create the quickstart template:
     oc create -f https://raw.githubusercontent.com/jboss-fuse/application-templates/fis-2.0.x.redhat/quickstarts/spring-boot-camel-template.json
 
 Now when you use "Add to Project" button in the OpenShift console, you should see a template for this quickstart. 
-
 
 ### Integration Testing
 
