@@ -33,6 +33,7 @@
     <!-- configure the versions you want to use here -->
     <fabric8.version>2.3.6</fabric8.version>
     <spring-boot.version>1.5.4.RELEASE</spring-boot.version>
+
     <arquillian-cube.version>1.9.0</arquillian-cube.version>
     <assertj.version>2.4.1</assertj.version>
 
@@ -51,6 +52,8 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+      <!-- The following dependencies can be removed whe using fabric8 BOM 2.3.7+ -->
       <dependency>
         <groupId>org.arquillian.cube</groupId>
         <artifactId>arquillian-cube-bom</artifactId>
@@ -58,8 +61,6 @@
         <scope>import</scope>
         <type>pom</type>
       </dependency>
-
-      <!-- Remove after fabric8 2.3.7 release -->
       <dependency>
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
@@ -127,6 +128,7 @@
         <version>${maven-surefire-plugin.version}</version>
         <inherited>true</inherited>
         <configuration>
+          <argLine>-DenableImageStreamDetection=true</argLine>
           <excludes>
             <exclude>**/*KT.java</exclude>
           </excludes>
