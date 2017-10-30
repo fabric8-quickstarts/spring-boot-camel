@@ -2,7 +2,9 @@ spec:
   template:
     spec:
       containers:
-        - 
+        - env:
+             - name:  AB_JMX_EXPORTER_CONFIG
+               value: /deployments/prometheus-config.yml
           resources:
             requests:
               cpu: "0.2"
