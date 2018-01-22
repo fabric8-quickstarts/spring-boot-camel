@@ -22,7 +22,7 @@
 
   <groupId>io.fabric8.quickstarts</groupId>
   <artifactId>spring-boot-camel</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0.fuse-000112</version>
 
   <name>Fabric8 :: Quickstarts :: Spring-Boot :: Camel</name>
   <description>Spring Boot example running a Camel route</description>
@@ -31,14 +31,14 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- configure the versions you want to use here -->
-    <fabric8.version>2.3.6</fabric8.version>
+    <fabric8.version>2.3.7.fuse-000032</fabric8.version>
     <spring-boot.version>1.5.4.RELEASE</spring-boot.version>
 
     <arquillian-cube.version>1.9.0</arquillian-cube.version>
     <assertj.version>2.4.1</assertj.version>
 
     <!-- maven plugin versions -->
-    <fabric8.maven.plugin.version>3.5.31</fabric8.maven.plugin.version>
+    <fabric8.maven.plugin.version>3.5.32.fuse-000036</fabric8.maven.plugin.version>
     <maven-compiler-plugin.version>3.6.0</maven-compiler-plugin.version>
     <maven-surefire-plugin.version>2.19.1</maven-surefire-plugin.version>
   </properties>
