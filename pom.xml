@@ -22,7 +22,7 @@
 
   <groupId>io.fabric8.quickstarts</groupId>
   <artifactId>spring-boot-camel</artifactId>
-  <version>1.0.0.fuse-000124</version>
+  <version>1.0.0.fuse-000124-redhat-1</version>
 
   <name>Fabric8 :: Quickstarts :: Spring-Boot :: Camel</name>
   <description>Spring Boot example running a Camel route</description>
