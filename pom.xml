@@ -31,7 +31,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
     <!-- configure the versions you want to use here -->
-    <fabric8.version>2.3.6</fabric8.version>
+    <fabric8.version>2.3.7</fabric8.version>
     <spring-boot.version>1.5.4.RELEASE</spring-boot.version>
 
     <arquillian-cube.version>1.9.0</arquillian-cube.version>
@@ -54,7 +54,7 @@
       </dependency>
 
       <!-- The following dependencies can be removed whe using fabric8 BOM 2.3.7+ -->
-      <dependency>
+      <!-- <dependency>
         <groupId>org.arquillian.cube</groupId>
         <artifactId>arquillian-cube-bom</artifactId>
         <version>${arquillian-cube.version}</version>
@@ -65,8 +65,8 @@
         <groupId>org.assertj</groupId>
         <artifactId>assertj-core</artifactId>
         <version>${assertj.version}</version>
-      </dependency>
-    </dependencies>
+      </dependency> -->
+    </dependencies> 
   </dependencyManagement>
 
   <dependencies>
