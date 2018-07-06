@@ -6,7 +6,7 @@
        http://camel.apache.org/schema/spring       http://camel.apache.org/schema/spring/camel-spring.xsd">
 
     <!-- You could also define a traditional camel context here -->
-    <!--
+
     <camelContext xmlns="http://camel.apache.org/schema/spring">
         <route>
             <from uri="timer://foo?period=1000"/>
@@ -14,5 +14,5 @@
             <log message=">>> ${body}"/>
         </route>
     </camelContext>
-    -->
+
 </beans>
