@@ -39,7 +39,6 @@
       <version.org.jboss.arquillian.junit.arquillian-junit-container>1.4.1.Final</version.org.jboss.arquillian.junit.arquillian-junit-container>
       <version.org.arquillian.cube.arquillian-cube-openshift>1.18.2</version.org.arquillian.cube.arquillian-cube-openshift>
       <version.io.fabric8.kubernetes-assertions>3.0.12</version.io.fabric8.kubernetes-assertions>
-      <version.junit.junit>4.12</version.junit.junit>
 
         <!-- maven plugin versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -89,7 +88,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${version.junit.junit}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
