@@ -16,15 +16,20 @@
 
 package io.fabric8.tests.integration;
 
+import io.fabric8.kubernetes.api.model.Pod;
+import io.fabric8.kubernetes.api.model.PodList;
+import io.fabric8.kubernetes.api.model.PodCondition;
+import io.fabric8.kubernetes.client.internal.readiness.Readiness;
 import io.fabric8.kubernetes.client.KubernetesClient;
+
+import org.arquillian.cube.kubernetes.api.Session;
 
 import org.jboss.arquillian.container.test.api.RunAsClient;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.test.api.ArquillianResource;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import static io.fabric8.kubernetes.assertions.Assertions.assertThat;
 
 @RunWith(Arquillian.class)
 @RunAsClient
@@ -33,8 +38,16 @@ public class KubernetesIntegrationKT {
     @ArquillianResource
     KubernetesClient client;
 
+    @ArquillianResource
+    public Session session;
+
     @Test
     public void testAppProvisionsRunningPods() throws Exception {
-        assertThat(client).deployments().pods().isPodReadyForPeriod();
+        PodList podList = client.pods().inNamespace(session.getNamespace()).list();
+        for (Pod p : podList.getItems()) {
+            if (!p.getMetadata().getName().endsWith("build") && !p.getMetadata().getName().endsWith("deploy")) {
+                assertTrue(p.getMetadata().getName() + " is not ready", Readiness.isReady(p));
+            }
+        }
     }
 }

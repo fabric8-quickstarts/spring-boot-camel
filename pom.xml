@@ -33,7 +33,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- configure the Fuse version you want to use here -->
-        <fuse.bom.version>7.5.0-SNAPSHOT</fuse.bom.version>
+        <fuse.bom.version>7.8.0.fuse-sb2-780005</fuse.bom.version>
 
         <!-- maven plugin versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -79,6 +79,19 @@
             <artifactId>camel-spring-boot-starter</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-model</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.fabric8</groupId>
+            <artifactId>kubernetes-client</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+
         <!-- Test -->
         <dependency>
             <groupId>junit</groupId>
@@ -99,11 +112,6 @@
                     <artifactId>httpclient-osgi</artifactId>
                 </exclusion>
             </exclusions>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.fabric8</groupId>
-            <artifactId>kubernetes-assertions</artifactId>
             <scope>test</scope>
         </dependency>
 
