@@ -43,11 +43,15 @@ public class KubernetesIntegrationKT {
 
     @Test
     public void testAppProvisionsRunningPods() throws Exception {
+        boolean foundReadyPod = false;
+
         PodList podList = client.pods().inNamespace(session.getNamespace()).list();
         for (Pod p : podList.getItems()) {
             if (!p.getMetadata().getName().endsWith("build") && !p.getMetadata().getName().endsWith("deploy")) {
                 assertTrue(p.getMetadata().getName() + " is not ready", Readiness.isReady(p));
+                foundReadyPod = true;
             }
         }
+        assertTrue("Found no ready pods in namespace", foundReadyPod);
     }
 }
