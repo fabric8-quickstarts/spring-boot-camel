@@ -1,0 +1,9 @@
+= Spring-Boot Camel QuickStart
+
+This example demonstrates how you can use Apache Camel with Spring Boot
+based on a https://github.com/fabric8io/base-images#java-base-images['fabric8 Java base image'].
+
+The quickstart uses Spring Boot to configure a little application that includes a Camel
+route that triggers a message every 5th second, and routes the message to a log.
+
+The application utilizes the Spring http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/annotation/ImportResource.html[`@ImportResource`] annotation to load a Camel Context definition via a _src/main/resources/spring/camel-context.xml_ file on the classpath.
