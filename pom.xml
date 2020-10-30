@@ -33,7 +33,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <!-- configure the Fuse version you want to use here -->
-        <fuse.bom.version>7.8.0.fuse-sb2-780005</fuse.bom.version>
+        <fuse.bom.version>7.8.0.fuse-sb2-780033</fuse.bom.version>
+	<fuse-java-openshift.docker.image.version>1.7</fuse-java-openshift.docker.image.version>
 
         <!-- maven plugin versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -153,7 +154,7 @@
                             <goal>repackage</goal>
                         </goals>
                     </execution>
-                </executions>
+		</executions>
             </plugin>
 
         </plugins>
@@ -162,20 +163,24 @@
     <profiles>
         <profile>
             <id>openshift</id>
+	    <properties>
+                <jkube.generator.from>registry.redhat.io/fuse7/fuse-java-openshift:${fuse-java-openshift.docker.image.version}</jkube.generator.from>
+            </properties>
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.jboss.redhat-fuse</groupId>
-                        <artifactId>fabric8-maven-plugin</artifactId>
-                        <version>${fuse.bom.version}</version>
+                        <groupId>org.eclipse.jkube</groupId>
+                        <artifactId>openshift-maven-plugin</artifactId>
+                        <version>1.0.1</version>
                         <executions>
                             <execution>
                                 <goals>
                                     <goal>resource</goal>
                                     <goal>build</goal>
+                                    <goal>apply</goal>
                                 </goals>
-                            </execution>
-                        </executions>
+			    </execution>
+			</executions>
                     </plugin>
                 </plugins>
             </build>
