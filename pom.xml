@@ -34,7 +34,7 @@
 
         <!-- configure the Fuse version you want to use here -->
         <fuse.bom.version>7.8.0.fuse-sb2-780033</fuse.bom.version>
-	<fuse-java-openshift.docker.image.version>1.7</fuse-java-openshift.docker.image.version>
+        <fuse-java-openshift.docker.image.version>1.7</fuse-java-openshift.docker.image.version>
 
         <!-- maven plugin versions -->
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
@@ -163,7 +163,7 @@
     <profiles>
         <profile>
             <id>openshift</id>
-	    <properties>
+            <properties>
                 <jkube.generator.from>registry.redhat.io/fuse7/fuse-java-openshift:${fuse-java-openshift.docker.image.version}</jkube.generator.from>
             </properties>
             <build>
