@@ -169,9 +169,9 @@
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.eclipse.jkube</groupId>
+                        <groupId>org.jboss.redhat-fuse</groupId>
                         <artifactId>openshift-maven-plugin</artifactId>
-                        <version>1.0.1</version>
+                        <version>${fuse.bom.version}</version>
                         <executions>
                             <execution>
                                 <goals>
